@@ -1,0 +1,31 @@
+.bar-container{
+    position: relative;
+    height: 60px;
+    display: flex;
+}
+
+#search-input {
+    margin-top: 14px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+  
+    padding-left: 10px;
+    padding-right: 10px;
+  
+    border: none;
+    border-radius: 5px;
+  
+    height: 50%;
+    width: 30vw;
+  
+    color: black;
+    background-color: var(--colour-sec);
+  }
+
+#search-icon{
+    fill: var(--accent-two);
+    height: 30px;
+
+    margin-top: 15px;
+}

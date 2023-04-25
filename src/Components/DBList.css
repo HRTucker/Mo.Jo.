@@ -1,0 +1,138 @@
+img {
+    height: 100px;
+}
+
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+
+    height: 100%;
+    max-width: 1280px;
+}
+
+.list-container div {
+    flex: 1;
+    display: block;
+    max-width: 360px;
+}
+
+.thumb-container{
+    width:320px;
+    height: 180px;
+}
+
+.film-thumb {
+    position: relative;
+
+    color: white;
+
+    width: 320px;
+    height: 180px;
+
+    transition: height 1s, width 1s;
+
+    background-size: cover;
+    background-position: center;
+
+    margin: 2px;
+
+    border: 3px solid var(--colour-sec);
+    border-radius: 5px;
+}
+
+.film-thumb-content {
+    margin: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.90)80%);
+    background-size: cover;
+    border-radius: 5px;
+
+    opacity: 0%;
+    transition: opacity 0.5s;
+
+    pointer-events: none;
+}
+
+.film-thumb-content .icon {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    margin-left: auto;
+}
+
+.film-thumb-content .icon svg {
+    fill: white;
+}
+
+.film-thumb:hover .film-thumb-content {
+    opacity: 100%;
+}
+
+.film-thumb:hover .film-thumb-content .thumb-title {
+    bottom: 10px
+}
+
+.film-thumb-content .thumb-title {
+    font-weight: bold;
+    position: absolute;
+    bottom: 1px;
+    left: 15px;
+
+    width: 300px;
+
+    transition: bottom 0.5s;
+}
+
+.thumb-info {
+    height: 300px;
+    margin-bottom: 20px;
+
+    display: inline;
+    opacity: 0%;
+    visibility: hidden;
+    transition: opacity 1s 0.5s;
+
+    overflow: hidden;
+}
+
+.thumb-info p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: normal;
+}
+
+.film-thumb.clicked {
+    position: absolute;
+    height: 360px;
+    z-index: 1;
+}
+
+.film-thumb.clicked .film-thumb-content {
+    opacity: 100%;
+}
+
+.film-thumb.clicked .film-thumb-content .thumb-title {
+    bottom: 85%;
+}
+
+.film-thumb.clicked .film-thumb-content .thumb-info {
+    visibility: visible;
+    position: absolute;
+    width: 90%;
+
+    top: 10%;
+    left: 20px;
+    font-weight: bold;
+
+    opacity: 100%;
+}
+

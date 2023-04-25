@@ -1,0 +1,174 @@
+.category-container{
+    
+}
+
+.scroll-item {
+    height: 180px;
+    aspect-ratio: auto 16/9;
+
+    display: inline-block;
+    
+
+    margin: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #ccc;
+
+}
+
+.scroll-list {
+    height: fit-content;
+
+    width: 100%;
+
+    margin: 0px;
+
+    background-color: hsla(0, 0%, 0%, 0.616);
+    
+    overflow-x: scroll;
+    overflow-y: none;
+    scroll-behavior: smooth;
+
+    white-space: nowrap;
+}
+
+.scroll-list::-webkit-scrollbar{
+    display: none;
+}
+
+.category-bar{
+    height:fit-content;
+    position: relative;
+}
+
+.category-bar-left,.category-bar-right{
+    position: absolute;
+    height: 100%;
+    aspect-ratio: auto 6/16;
+    font-size: 90px;
+    text-align: center;
+    z-index: 10;
+
+    color: white;
+}
+
+.category-bar-right{
+    right:0;
+    background: linear-gradient(-90deg,rgba(0, 0, 0, 0.397), rgba(255, 255, 255, 0));
+}
+
+.category-bar-left{
+    left:0;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.719), rgba(255, 255, 255, 0));
+}
+
+.category-head{
+    font-size: 24px;
+    height: 1.5em;
+    width: fit-content;
+    background-color: var(--colour-sec);
+}
+
+.category-head p{
+    color: black;
+    font-weight: bold;
+    margin:10px
+}
+
+.entry-frame-border{
+    position: relative;
+    height: inherit;
+    aspect-ratio: auto 16/9;
+    margin:0px;
+}
+
+.entry-frame{
+    position: absolute;
+    margin:0px;
+    padding: 0px;
+    height: inherit;
+    aspect-ratio: auto 16/9;
+
+    top: 0px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.entry-content{
+    height: inherit;
+    width: inherit;
+}
+
+.entry-title{
+    white-space: normal;
+    margin: 10px;
+    position: absolute;
+    bottom: 0px;
+
+    color: white;
+    font-weight: bold;
+    
+    width: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scrollbar{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height:10px;
+    width:600px;
+}
+
+.scrollbar-track{
+    position: absolute;
+    background-color: grey;
+    height: 10px;
+    width: 600px;
+
+    left:0px;
+}
+
+.scrollbar-thumb{
+    position: absolute;
+    background-color: black;
+    height: 10px;
+    width: 20px;
+
+    left:80;
+}
+
