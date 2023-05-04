@@ -1,0 +1,38 @@
+.search-list{
+    background-color: white;
+    width: 95%;
+
+    margin:auto;
+    padding: 10px;
+    
+}
+
+.search-item{
+    height: fit-content;
+    width: 100%;
+}
+
+.search-entry{
+    position: relative;
+    height:fit-content;
+    width: 100%;
+    margin:0px;
+
+    display: flex;
+
+    border: 1px solid black;
+}
+
+.search-img{
+    height: 120px;
+    aspect-ratio: 16/9;
+
+    background-size: cover;
+}
+
+.search-entry-title{
+    color: black;
+    font-weight: bold;
+    margin: 10px;
+    margin-bottom: auto;
+}

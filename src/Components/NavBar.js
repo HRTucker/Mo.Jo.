@@ -99,7 +99,7 @@ function NavBar(props) {
   }
 
   useEffect(() =>{
-    getTrending()
+    
   }, []);
 
   return (
@@ -128,4 +128,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(NavBar)
+export default connect(mapStateToProps,mapDispatchToProps)(NavBar);

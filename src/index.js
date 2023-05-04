@@ -6,11 +6,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 
-import NavBar from './Components/NavBar'
+import NavBar from './Components/NavBar';
 import DBList from './Components/DBList';
 import PageBtn from './Components/PageBtn';
 import SearchBar from './Components/SearchBar';
 import CategoryBar from './Components/CategoryBar';
+import SearchList from './Components/SearchList';
+import EntryPage from './Components/EntryPage';
 
 const initialState = {
   data: [],
@@ -138,19 +140,15 @@ ReactDOM.render(
         <NavBar />
         <div className='content'>
           <SearchBar/>
-          <CategoryBar catHead="Trending"/>
-          <CategoryBar/>
-          <CategoryBar/>
-          <CategoryBar/>
-          <CategoryBar/>
           <Routes>
             <Route exact path="/" element={<Navigate to="/trending" />} />
-            <Route path="/search" Component={() => (<div><PageBtn /><DBList /></div>)} />
-            <Route exact path="/trending" Component={() => (<div><PageBtn /><DBList /></div>)} />
+            <Route path="/search" Component={() => (<div><SearchList/></div>)} />
+            <Route exact path="/trending" Component={() => (<div><CategoryBar catHead="Trending"/><PageBtn /><DBList /></div>)} />
             <Route exact path="/films" Component={() => (<div><PageBtn /><DBList /></div>)} />
             <Route exact path="/films" Component={() => (<div><PageBtn /><DBList /></div>)} />
             <Route exact path="/series" Component={() => (<div><PageBtn /><DBList /></div>)} />
             <Route exact path="/people" Component={() => (<div><PageBtn /><DBList /></div>)} />
+            <Route path="entry/:type/:id" Component={() => (<div><EntryPage/></div>)} />
           </Routes>
         </div>
       </div>

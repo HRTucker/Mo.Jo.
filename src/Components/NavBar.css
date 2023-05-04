@@ -2,7 +2,7 @@
   color:var(--accent-two);
   justify-content: center;
   background-color: var(--colour-sec);
-  height: 100;
+  height:100%;
   grid-column: 1 / 2;
 }
 
