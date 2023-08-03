@@ -105,9 +105,9 @@ function NavBar(props) {
   return (
     <div className='nav-bar'>
       <div className="site-title">
-        <h2>Mo.Fi.</h2>
+        <h2>Mo.Jo.</h2>
       </div>
-      <Link to="/trending"><button className='nav-btn' onClick={getTrending}>Trending</button></Link>
+      <Link to="/trending"><button className='nav-btn'>Trending</button></Link>
       <Link to="/films"><button className='nav-btn' onClick={getFilms}>Film</button></Link>
       <Link to="/series"><button className='nav-btn' onClick={getTV}>Series</button></Link>
       <Link to="/people"><button className='nav-btn' onClick={getPeople}>People</button></Link>

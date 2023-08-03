@@ -1,7 +1,9 @@
 .bar-container{
     position: relative;
     height: 60px;
+    width: 100%;
     display: flex;
+    background-color: var(--colour-pri);
 }
 
 #search-input {
@@ -27,5 +29,5 @@
     fill: var(--accent-two);
     height: 30px;
 
-    margin-top: 15px;
+    margin-top: 10px;
 }

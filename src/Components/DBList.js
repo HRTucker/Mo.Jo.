@@ -1,9 +1,18 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import "./DBList.css"
 import { connect } from "react-redux";
+import tmdb_api from "../API/TMDB_API";
 
 function DBList(props){
-    if(props.data == null){return}
+    const [data, setData] = useState([]);
+
+    useEffect(()=>{
+      const asyncProcesses = async () =>{
+        setData(await tmdb_api.film.getTrending());
+      }
+      asyncProcesses();
+    }, []);
+
     
     function thumbClicked(e){
       console.log(e.target.id + e.target.className);
@@ -32,19 +41,19 @@ function DBList(props){
       )
     }
 
-    const arr = props.data;
-    const filmList = arr.map((film, index)=>
-      <LandscapeDisplay film={film} index={index} />)
+    var filmList = [];
 
-    return <div className="list-container">{filmList}
-    </div>;
-  }
-
-  function mapStateToProps(state){
-    return{
-        data: state.data
+    if(data.results != null){
+      const arr = data.results;
+      filmList = arr.map((film, index)=> <LandscapeDisplay film={film} index={index} />)
     }
+
+    return (
+      <div className="list-container">
+        {filmList}
+      </div>
+    ); 
   }
 
 
-  export default connect(mapStateToProps)(DBList);
+  export default DBList;

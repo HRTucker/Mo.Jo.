@@ -1,35 +1,54 @@
 .category-container{
-    width: width;
+    box-sizing: content-box;
 }
 
-.scroll-item {
-    height: 180px;
-    aspect-ratio: auto 16/9;
+.category-container .category-bar-left,.category-container .category-bar-right{
+    opacity: 0%;
+    transition: opacity 0.25s;
+}
 
-    display: inline-block;
-    
-
-    margin: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: #ccc;
-
+.category-container:hover .category-bar-left,.category-container:hover .category-bar-right{
+    opacity: 100%;
 }
 
 .scroll-list {
-    height: fit-content;
-
     width: 100%;
-
+    aspect-ratio: auto 8/1;
     margin: 0px;
-
-    background-color: hsla(0, 0%, 0%, 0.616);
     
     overflow-x: scroll;
-    overflow-y: none;
+    overflow-y: hidden;
     scroll-behavior: smooth;
 
     white-space: nowrap;
+    
+}
+
+@media (max-width: 1600px) {
+    .scroll-list {
+        aspect-ratio: auto 8/1;
+    }
+}
+@media (max-width: 1400px) {
+    .scroll-list {
+        aspect-ratio: auto 6/1;
+    }
+}
+@media (max-width: 1200px) {
+    .scroll-list {
+        aspect-ratio: auto 4/1;
+    }
+}
+
+.scroll-item {
+    box-sizing: border-box;
+    height: 100%;
+    aspect-ratio: auto 16/11;
+
+    display: inline-block;
+
+    background-color: #7070706c;
+    mask-image: element('.entry-frame-decoration-spacer')
 }
 
 .scroll-list::-webkit-scrollbar{
@@ -37,6 +56,7 @@
 }
 
 .category-bar{
+    box-sizing: border-box;
     height:fit-content;
     position: relative;
 }
@@ -44,7 +64,7 @@
 .category-bar-left,.category-bar-right{
     position: absolute;
     height: 100%;
-    aspect-ratio: auto 6/16;
+    aspect-ratio: auto 5/16;
     font-size: 90px;
     text-align: center;
     z-index: 10;
@@ -54,53 +74,77 @@
 
 .category-bar-right{
     right:0;
-    background: linear-gradient(-90deg,rgba(0, 0, 0, 0.397), rgba(255, 255, 255, 0));
+    background: linear-gradient(-90deg,rgba(0, 0, 0, 0.308), rgba(255, 255, 255, 0));
 }
 
 .category-bar-left{
     left:0;
-    background: linear-gradient(90deg,rgba(0, 0, 0, 0.719), rgba(255, 255, 255, 0));
+    background: linear-gradient(90deg,rgba(0, 0, 0, 0.308), rgba(255, 255, 255, 0));
+}
+
+.category-bar-left svg, .category-bar-right svg{
+    z-index: 10;
+    fill: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 100%;
+}
+.category-bar-right svg{
+    transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .category-head{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-top: 2px solid var(--colour-sec);
+    border-bottom: 2px solid var(--colour-sec);
     font-size: 24px;
-    height: 1.5em;
-    width: fit-content;
-    background-color: var(--colour-sec);
+    height: 1.3em;
+    width: 100%;
 }
 
 .category-head p{
-    color: black;
+    text-align: center;
+    color: var(--colour-text);
     font-weight: bold;
-    margin:10px
+    margin:0px
 }
 
 .entry-frame-border{
+    box-sizing: border-box;
     position: relative;
-    height: inherit;
+    height: 80%;
     aspect-ratio: auto 16/9;
-    margin:0px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .entry-frame{
+    box-sizing: border-box;
     position: absolute;
     margin:0px;
     padding: 0px;
-    height: inherit;
+    height: 100%;
     aspect-ratio: auto 16/9;
-
     top: 0px;
 
     background-size: cover;
     background-position: center;
+    box-shadow: inset 0px 0px 40px black;
+    background-clip: border-box;
 }
 
 .entry-content{
-    height: inherit;
-    width: inherit;
+    height: 100%;
+    width: 100%;
 }
 
 .entry-title{
+    font-size:1rem;
+
     white-space: normal;
     margin: 10px;
     position: absolute;
@@ -112,6 +156,31 @@
     width: 80%;
 }
 
+.entry-frame-decoration{
+    width: 100%;
+    height: 10%;
+    position: relative;
+}
+
+.entry-frame-decoration-group{
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    display: flex;
+}
+
+.entry-frame-decoration-spacer{
+    border-radius: 2px;
+    background-color: var(--colour-pri);
+    height: 100%;
+    width: 5%;
+    margin-left: 5%;
+    
+}
 
 
 

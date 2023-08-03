@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { legacy_createStore as createStore } from 'redux'
 import { Provider } from 'react-redux';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useLocation} from 'react-router-dom';
 
 import NavBar from './Components/NavBar';
 import DBList from './Components/DBList';
@@ -13,6 +13,10 @@ import SearchBar from './Components/SearchBar';
 import CategoryBar from './Components/CategoryBar';
 import SearchList from './Components/SearchList';
 import EntryPage from './Components/EntryPage';
+import GaugeMeter from './Components/GaugeMeter';
+import FilmPage from './Pages/FilmPage';
+import SeriesPage from './Pages/SeriesPage';
+
 
 const initialState = {
   data: [],
@@ -31,7 +35,7 @@ function reducer(state = initialState, action){
     default:
       return state;
   }
-}
+} 
 /*
 class Menu extends React.Component {
   dbKey = "";
@@ -142,13 +146,12 @@ ReactDOM.render(
           <SearchBar/>
           <Routes>
             <Route exact path="/" element={<Navigate to="/trending" />} />
-            <Route path="/search" Component={() => (<div><SearchList/></div>)} />
-            <Route exact path="/trending" Component={() => (<div><CategoryBar catHead="Trending"/><PageBtn /><DBList /></div>)} />
-            <Route exact path="/films" Component={() => (<div><PageBtn /><DBList /></div>)} />
-            <Route exact path="/films" Component={() => (<div><PageBtn /><DBList /></div>)} />
-            <Route exact path="/series" Component={() => (<div><PageBtn /><DBList /></div>)} />
+            <Route path="/search" Component={() => (<div><SearchList /></div>)} />
+            <Route exact path="/trending" Component={() => (<p>Under Construction!</p>)} />
+            <Route exact path="/films" Component={() => (<FilmPage />)} />
+            <Route exact path="/series" Component={() => (<SeriesPage/>)} />
             <Route exact path="/people" Component={() => (<div><PageBtn /><DBList /></div>)} />
-            <Route path="entry/:type/:id" Component={() => (<div><EntryPage/></div>)} />
+            <Route path="entry/:type/:id" Component={() => (<EntryPage />)} />
           </Routes>
         </div>
       </div>
